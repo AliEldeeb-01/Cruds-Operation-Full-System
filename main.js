@@ -83,7 +83,7 @@ create.onclick = () => {
         mood = 0
         if (mood == 0) {
             deleteBll()
-            title.placeholder ='YOU MUSR WRITE  BEFORE CREATING .'
+            title.placeholder ='YOU MUST WRITE  BEFORE CREATING .'
             title.focus()
 
         }

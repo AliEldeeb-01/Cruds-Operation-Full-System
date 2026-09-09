@@ -15,22 +15,38 @@ body {
     color: white;
     /* gap: 10px; */
     width: 100%;
+    box-shadow: #3C0052;
+}
+
+#table {
+    width: 93%;
+    white-space: inherit;
+    /* overflow: scroll; */
+    border-collapse: collapse;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#title{
+    scale: 0.9;
 }
 
 #title:focus {
-    scale: 1.1;
+    scale: 0.95;
     transition-duration: 300ms;
 
 }
 
 input {
-    width: 100%;
+    width: 95%;
     background-color: #111111;
     color: white;
     border-radius: 5px;
     padding: 10px;
     margin-top: 5px;
     border: 0;
+    scale: 0.95 !important;
+
 
 
 }
@@ -38,10 +54,12 @@ input {
 
 
 input:focus {
-    transform: scale(1.1);
+    /* transform: scale(0.95); */
+    scale: 1 !important;
     border: 1px solid #222222;
 
 }
+
 
 p {
     text-align: center;
@@ -78,18 +96,24 @@ button {
     width: 100%;
 }
 
+button{
+    scale: 0.9;
+}
+
 button:hover {
 
     /* letter-spacing: 1px; */
     background-color: #690090;
-    transform: scale(1.1);
-    width: 50px;
+    /* transform: scale(1.1); */
+    scale: 0.95;
+    /* width: 50px; */
+    transition: all 300ms ;
 }
 
-/* 
+
 .inp-title{
-    width: 100%;
-} */
+    width: 95%;
+}
 
 .btns {
     display: flex;
@@ -102,40 +126,40 @@ button:hover {
     width: 40%;
 }
 
-#tot-price {
+/* #tot-price {
     display: flex;
     flex-direction: row;
-    gap: 5px;
-}
+    gap: 2px;
+    justify-content: space-between;
+} */
 
-#tot-price span {
-    margin-top: 5px;
+#tot-price #total {
+    /* margin-top: 5px; */
     background-color: rgb(200, 5, 5);
-    padding: 8px 0;
+    padding: 2px 0 !important;
     border-radius: 5px;
+    min-width: 50px;
+    /* width: 50px; */
+
 }
 
 #tot-price span::before {
     content: 'Total:';
+
     /* background-color: rgb(200, 5, 5); */
-    padding: 8px 0;
+    padding: 2px 2px;
     border-radius: 5px;
 }
 
-/* table  {
-    width: 100%;
-} */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+
+
 
 th {
     text-transform: capitalize;
 }
 
-th,
+th:not(.btnsd),
 td {
     padding: 10px;
     text-align: center;
@@ -144,4 +168,163 @@ td {
 
 .who #deleteall {
     width: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #181818;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    min-height: 100vh;
+}
+
+body > div {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #e0e0e0;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: center;
+    color: #888;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    background-color: #111111;
+    color: white;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #690090;
+    box-shadow: 0 0 8px rgba(105, 0, 144, 0.4);
+}
+
+#tot-price {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 4px;
+    /* width: 45% !important; */
+}
+
+
+#tot-price span {
+    margin-top: 6px;
+    background-color: #900c3f;
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    
+}
+
+#tot-price span::before {
+    content: 'Total: ';
+    /* margin-right: 4px; */
+}
+
+.co-cat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #3C0052;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    border: 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 8px;
+}
+
+button:hover {
+    background-color: #690090;
+    /* transform: translateY(-2px); */
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btns button {
+    width: 50%;
+}
+
+.table-responsive {
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #111;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+    text-align: center;
+}
+
+th, td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+}
+
+th {
+    background-color: #222;
+    color: #bbb;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background-color: #1a1a1a;
+}
+
+@media (max-width: 600px) {
+    .co-cat {
+        grid-template-columns: 1fr;
+    }
+
+    #tot-price {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
